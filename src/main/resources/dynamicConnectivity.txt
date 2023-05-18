@@ -1,0 +1,13 @@
+10
+union 1 2
+union 3 2
+union 6 7
+find 2 4
+find 2 1
+union 7 8
+union 7 9
+find 8 9
+union 3 4
+find 2 9
+find 3 9
+find 3 6
