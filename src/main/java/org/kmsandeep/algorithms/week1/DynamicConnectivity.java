@@ -21,16 +21,17 @@ public class DynamicConnectivity {
     public static void dynamicConnectivityImplementation(DynamicConnectivityInterface dnInterface){
         for (int i=1; i < lines.size(); i++){
             String[] command = lines.get(i).split(" ");
+            System.out.println(lines.get(i));
             String operation = command[0];
             int p = Integer.parseInt(command[1]);
             int q = Integer.parseInt(command[2]);
             if("find".equalsIgnoreCase(operation)){
                 boolean connected = dnInterface.isConnected(p,q);
                 if (connected){
-                    System.out.println(p +" and "+ q + " are connected.");
+                    System.out.println("--> "+p +" and "+ q + " are connected.");
                 }
                 else{
-                    System.out.println(p +" and "+ q + " are not connected.");
+                    System.out.println("--> "+p +" and "+ q + " are not connected.");
                 }
             }
             else if("union".equalsIgnoreCase(operation)){
@@ -41,8 +42,9 @@ public class DynamicConnectivity {
     }
     public static void main(String[] args) {
         DynamicConnectivity dc = new DynamicConnectivity();
-        dynamicConnectivityImplementation(new QuickFindUF(N));
+//        dynamicConnectivityImplementation(new QuickFindUF(N));
 //        dynamicConnectivityImplementation(new QuickUnionUF(N));
+        dynamicConnectivityImplementation(new WeightedQuickUnionUF(N));
 
     }
 }
