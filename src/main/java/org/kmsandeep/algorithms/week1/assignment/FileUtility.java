@@ -52,7 +52,6 @@ public class FileUtility {
 
     public static List<String> readFile(String fileName) throws IOException {
         String path = FileUtility.class.getResource("/week1"+fileName).getPath();
-
         List<String> lines = Files.readAllLines(Path.of(path));
         return lines;
     }
