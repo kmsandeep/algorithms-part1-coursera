@@ -2,7 +2,6 @@ package org.kmsandeep.algorithms.week2.stack;
 
 import java.util.EmptyStackException;
 import java.util.Iterator;
-import java.util.function.Consumer;
 
 public class DynamicCapacityArrayStack<E> implements Stack<E> {
     private static int DEFAULT_CAPACITY = 8;
@@ -24,7 +23,6 @@ public class DynamicCapacityArrayStack<E> implements Stack<E> {
         public boolean hasNext() {
             return i > 0;
         }
-
         @Override
         public E next() {
             return (E) items[--i];
